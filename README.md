@@ -10,6 +10,12 @@ Read boost config file in js
 $ npm install [--save] [-g] read-boost-config
 ```
 
+## Test
+
+```bash
+$ npm test
+```
+
 ## API
 
 ```js
