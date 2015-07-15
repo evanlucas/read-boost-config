@@ -1,0 +1,10 @@
+read-boost-config - Read boost config file in js
+
+  usage: read-boost-config [options] [filepath]
+         cat config | read-boost-config [options]
+
+  options:
+    -h, --help                    show help and usage
+    -v, --version                 show version
+    -e, --eval <string>           parse <string>
+    -j, --json                    pretty print json
