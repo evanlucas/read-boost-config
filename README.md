@@ -17,6 +17,12 @@ $ npm install [--save] [-g] read-boost-config
 $ npm test
 ```
 
+## Coverage
+
+```bash
+$ npm test -- --cov
+```
+
 ## API
 
 ```js
