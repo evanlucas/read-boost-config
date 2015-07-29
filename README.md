@@ -1,6 +1,7 @@
 # read-boost-config
 
 [![Build Status](https://travis-ci.org/evanlucas/read-boost-config.svg)](https://travis-ci.org/evanlucas/read-boost-config)
+[![Coverage Status](https://coveralls.io/repos/evanlucas/read-boost-config/badge.svg?branch=master&service=github)](https://coveralls.io/github/evanlucas/read-boost-config?branch=master)
 
 Read boost config file in js
 
