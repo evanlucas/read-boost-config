@@ -55,6 +55,18 @@ test('parseString should skip comments at end of line', function(t) {
   t.end()
 })
 
+test('parseString should return empty object for empty string', function(t) {
+  var str = ''
+  t.deepEqual(read.parseString(''), {})
+  t.end()
+})
+
+test('parseString should skip invalid lines', function(t) {
+  var str = 'thisisatest'
+  t.deepEqual(read.parseString(str), {})
+  t.end()
+})
+
 test('parseFile should work', function(t) {
   read.parseFile(fix, function(err, result) {
     t.ifError(err)
@@ -62,6 +74,13 @@ test('parseFile should work', function(t) {
       name: 'evan'
     , foo: 'bar'
     })
+    t.end()
+  })
+})
+
+test('parseFile fails if fs.readFile fails', function(t) {
+  read.parseFile('dasfasdf', function(err, result) {
+    t.type(err, 'Error')
     t.end()
   })
 })
