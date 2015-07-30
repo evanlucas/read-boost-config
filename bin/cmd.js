@@ -28,18 +28,24 @@ if (parsed.eval) {
   parseStr(parsed.eval)
   return
 }
+var args = parsed.argv.remain
 
-getstdin(function(data) {
-  if (data) {
-    parseStr(data)
-  } else {
-    var fp = parsed.argv.remain.shift()
-    if (!fp) {
-      return help()
-    }
-    print(read.parseFileSync(fp))
+if (args.length) {
+  var fp = args.shift()
+  if (!fp) {
+    return help()
   }
-})
+  print(read.parseFileSync(fp))
+} else {
+  var buf = ''
+  process.stdin.setEncoding('utf8')
+  process.stdin.on('data', function(chunk) {
+    buf += chunk
+  })
+  process.stdin.on('end', function() {
+    parseStr(buf)
+  })
+}
 
 function parseStr(str) {
   print(read.parseString(str))
