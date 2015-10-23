@@ -4,7 +4,7 @@
   "description": "Read boost config file in js",
   "main": "index.js",
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tap test/*.js --cov"
   },
   "dependencies": {
     "help": "~2.1.0",
