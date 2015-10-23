@@ -1,3 +1,5 @@
+'use strict'
+
 var test = require('tap').test
   , read = require('../')
   , path = require('path')

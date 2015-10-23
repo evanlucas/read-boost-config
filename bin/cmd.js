@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict'
+
 var help = require('help')()
   , nopt = require('nopt')
   , read = require('../')
