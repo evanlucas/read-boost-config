@@ -1,13 +1,13 @@
 'use strict'
 
-var test = require('tap').test
-  , read = require('../')
-  , path = require('path')
-  , fix = path.join(__dirname, 'fixture')
+const test = require('tap').test
+    , read = require('../')
+    , path = require('path')
+    , fix = path.join(__dirname, 'fixture')
 
 test('parseString should work', function(t) {
-  var str = 'name=evan\nfoo=bar\n'
-  var out = read.parseString(str)
+  const str = 'name=evan\nfoo=bar\n'
+  const out = read.parseString(str)
   t.deepEqual(out, {
     name: 'evan'
   , foo: 'bar'
@@ -16,11 +16,11 @@ test('parseString should work', function(t) {
 })
 
 test('parseString should work with sections', function(t) {
-  var str = '[foo.bar]\n' +
+  const str = '[foo.bar]\n' +
     'name=evan\n' +
     'foo=bar\n'
 
-  var out = read.parseString(str)
+  const out = read.parseString(str)
   t.deepEqual(out, {
     foo: {
       bar: {
@@ -34,10 +34,10 @@ test('parseString should work with sections', function(t) {
 })
 
 test('parseString should skip commented lines', function(t) {
-  var str = 'name=evan\n' +
+  const str = 'name=evan\n' +
     '#foo=bar\n'
 
-  var out = read.parseString(str)
+  const out = read.parseString(str)
   t.deepEqual(out, {
     name: 'evan'
   })
@@ -46,10 +46,10 @@ test('parseString should skip commented lines', function(t) {
 })
 
 test('parseString should skip comments at end of line', function(t) {
-  var str = 'name=evan # This is my name\n' +
+  const str = 'name=evan # This is my name\n' +
     '#foo=bar\n'
 
-  var out = read.parseString(str)
+  const out = read.parseString(str)
   t.deepEqual(out, {
     name: 'evan'
   })
@@ -58,13 +58,13 @@ test('parseString should skip comments at end of line', function(t) {
 })
 
 test('parseString should return empty object for empty string', function(t) {
-  var str = ''
+  const str = ''
   t.deepEqual(read.parseString(''), {})
   t.end()
 })
 
 test('parseString should skip invalid lines', function(t) {
-  var str = 'thisisatest'
+  const str = 'thisisatest'
   t.deepEqual(read.parseString(str), {})
   t.end()
 })
@@ -88,7 +88,7 @@ test('parseFile fails if fs.readFile fails', function(t) {
 })
 
 test('parseFileSync should work', function(t) {
-  var result = read.parseFileSync(fix)
+  const result = read.parseFileSync(fix)
   t.deepEqual(result, {
     name: 'evan'
   , foo: 'bar'

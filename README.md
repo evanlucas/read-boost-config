@@ -5,6 +5,9 @@
 
 Read boost config file in js
 
+*Note: `read-boost-config` is only supported on iojs and node v4+. To use with
+an older version of node, please use `read-boost-config@1`.*
+
 ## Install
 
 ```bash

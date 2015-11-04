@@ -2,21 +2,21 @@
 
 'use strict'
 
-var help = require('help')()
-  , nopt = require('nopt')
-  , read = require('../')
-  , getstdin = require('get-stdin')
-  , knownOpts = { help: Boolean
-                , version: Boolean
-                , eval: String
-                , json: Boolean
-                }
-  , shortHand = { h: ['--help']
-                , v: ['--version']
-                , e: ['--eval']
-                , j: ['--json']
-                }
-  , parsed = nopt(knownOpts, shortHand)
+const help = require('help')()
+    , nopt = require('nopt')
+    , read = require('../')
+    , getstdin = require('get-stdin')
+    , knownOpts = { help: Boolean
+                  , version: Boolean
+                  , eval: String
+                  , json: Boolean
+                  }
+    , shortHand = { h: ['--help']
+                  , v: ['--version']
+                  , e: ['--eval']
+                  , j: ['--json']
+                  }
+    , parsed = nopt(knownOpts, shortHand)
 
 if (parsed.help)
   return help()
@@ -30,10 +30,10 @@ if (parsed.eval) {
   parseStr(parsed.eval)
   return
 }
-var args = parsed.argv.remain
+const args = parsed.argv.remain
 
 if (args.length) {
-  var fp = args.shift()
+  const fp = args.shift()
   if (!fp) {
     return help()
   }
