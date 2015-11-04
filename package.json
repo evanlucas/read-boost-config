@@ -1,6 +1,6 @@
 {
   "name": "read-boost-config",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Read boost config file in js",
   "main": "index.js",
   "scripts": {
