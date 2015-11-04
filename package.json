@@ -12,7 +12,7 @@
     "object-path": "~0.9.2"
   },
   "devDependencies": {
-    "tap": "~2.1.1"
+    "tap": "~2.2.0"
   },
   "license": "MIT",
   "bin": {
